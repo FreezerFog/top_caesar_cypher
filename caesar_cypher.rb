@@ -1,34 +1,33 @@
-def caesar_cipher(message, cypher_offset)
-  wrap_offset = 26
+def caesar_cipher(message, cipher_shift)
+  wrap_alphabet = 26
 
-  # Cleans user input to an offset that will work with ASCII table character positions
-  if cypher_offset / 26 > 0 
-    cypher_offset = cypher_offset - (26 * (cypher_offset / 26).to_i)
+  if cipher_shift.abs / 26 > 0
+      cipher_shift = cipher_shift - (26 * (cipher_shift / 26).to_i)
   end
 
-  cyphered_message = message.each_char.map do |character|
-    character_shifted_ord = character.ord + cypher_offset
+  encrypted_message = message.each_char.map do |character|
+    character_shifted = character.ord + cipher_shift
 
     case character.ord
     when 65..90
-      if character.ord + cypher_offset > 90
-        character = (character_shifted_ord - wrap_offset).chr
+      if character.ord + cipher_shift > 90 
+        character = (character_shifted - wrap_alphabet).chr
       else
-        character = (character_shifted_ord).chr
+        character = (character_shifted).chr
       end
     when 97..122
-      if character.ord + cypher_offset > 122
-        character = (character_shifted_ord - wrap_offset).chr
+      if character.ord + cipher_shift > 122 
+        character = (character_shifted - wrap_alphabet).chr
       else
-        character = (character_shifted_ord).chr
+        character = (character_shifted).chr
       end
     else 
       character = character
-    end  
+    end
   end
 
-  puts cyphered_message.join
+  puts encrypted_message.join
 end
 
 caesar_cipher("What a string!", 5)
-caesar_cipher("I'm a tricky website user! Can the cypher handle this???", 37)
+caesar_cipher("I'm a tricky website user! Can the cipher handle this???", 37)
