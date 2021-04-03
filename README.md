@@ -6,8 +6,6 @@ The goal of this project was to implement a Caesar cipher method using Ruby.
 
 ## Cipher Explanation
 
----
-
 The Caesar cipher is a relatively simple message encrypter that was allegedly used by the emporer Julius Caesar to encrypt messages meant for his generals.
 
 The cipher operates on the following principles:
@@ -19,8 +17,6 @@ The cipher operates on the following principles:
 
 ## Project Guidelines
 
----
-
 The project specified the following guidelines:
 
 - The cipher must accept a message (string) and cipher (integer) parameter
@@ -29,8 +25,6 @@ The project specified the following guidelines:
 - Only letter characters are encrypted. Punctuation must be preserved in the encrypted message.
 
 ## Design Decisions
-
----
 
 As an English speaker I decided to implement this method with the English alphabet.
 
